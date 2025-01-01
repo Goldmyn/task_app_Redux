@@ -19,6 +19,7 @@ Welcome to the Task Management App! This application allows users to create, edi
 - User-friendly modal for editing tasks
 - Notifications for successful updates or errors
 - Delete Task
+- Filter based on status
 
 ## Technologies Used
 

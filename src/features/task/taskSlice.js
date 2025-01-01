@@ -75,12 +75,29 @@ export const taskSlice = createSlice({
       // store the new userTasks array in the localStorage
       localStorage.setItem("tasks", JSON.stringify(state.userTasks));
     },
+    // filter task directly from local storage
+    filterTasks: (state, action) => {
+      // if the action payload is equal to all
+      if (action.payload === "all") {
+        // set the userTasks array to the tasks stored in the localStorage
+        state.userTasks = JSON.parse(localStorage.getItem("tasks"));
+      } else {
+        // if the action payload is not equal to all
+        // filter the userTasks array to show only the tasks with the completed status equal to the action payload
+        state.userTasks = JSON.parse(localStorage.getItem("tasks")).filter(
+          (task) =>
+            action.payload === "completed"
+              ? task.completed === true
+              : task.completed === false
+        );
+      }
+    },
   },
 });
 
 // export the actions
 
-export const { addNewTask, toggleTask, deleteTask, editTask } =
+export const { addNewTask, toggleTask, deleteTask, editTask, filterTasks } =
   taskSlice.actions;
 
 // export the reducer

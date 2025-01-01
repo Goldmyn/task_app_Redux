@@ -32,8 +32,8 @@ function DisplayTask() {
               }`}
             >
               <Button
-                type="primary"
                 onClick={() => handleDeleteTask(item.taskId)}
+                className="bg-rose-400 font-bold text-white"
               >
                 Delete
               </Button>
