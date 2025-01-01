@@ -23,7 +23,7 @@ function DisplayTask() {
     <div className=" grid lg:grid-cols-2 mx-auto p-4 gap-4 ">
       {userTasks.map((item) => (
         <div key={item.taskId}>
-          <div className="bg-gray-800 rounded-lg">
+          <div className="bg-gray-800 rounded-lg shadow-lg shadow-slate-400">
             <div
               className={`flex justify-between px-4 py-2 ${
                 item.completed
